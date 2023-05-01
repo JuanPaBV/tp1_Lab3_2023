@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 
@@ -18,21 +18,22 @@
         <img src="imagenes/globo.png" alt="Logo" id="logo">
         <div class="ingreso-usuario">
             <input type="text" placeholder="Ingresa tu usuario...">
-            <button id="btn_usuario">Ingresar</button>
         </div>
     </header>
     <main>
-        <div id="perfil">
-            <img src="imagenes/fotoPerfil.jpg" alt="Foto de perfil">
-            <h2>Jane Doe</h2>
-            <p><strong>Email:</strong>jane_doe@email.com</p>
-            <p><strong>Fecha de nacimiento:</strong>01/05/1996</p>
-            <p><strong>Telefono:</strong>918-936-9585</p>
-            <p><strong>Ciudad:</strong>Tokio,Japón</p>
+        <section class="perfil"">
+            <img src=" imagenes/fotoPerfil.jpg" alt="Foto de perfil">
+            <div id="perfil-informacion">
+                <h1>Jane Doe</h1>
+                <p><strong>Email:</strong>jane_doe@email.com</p>
+                <p><strong>Fecha de nacimiento:</strong>01/05/1996</p>
+                <p><strong>Telefono:</strong>918-936-9585</p>
+                <p><strong>Ciudad:</strong>Tokio,Japón</p>
+            </div>
             <button id="btn_seguir">Seguir</button>
-        </div>
-        <div id="publicaciones">
-            <p>publicado hace 1 semana</p>
+        </section>
+        <section class="publicaciones">
+            <p>Publicado hace 1 semana</p>
             <img src="imagenes/publicacion.jpg" alt="callejones de tokio">
             <button id="btn_meGusta">Me gusta</button>
             <h4 id="likes">Likes</h4>
@@ -42,15 +43,15 @@
             <form action="Comentar">
 
             </form>
-        </div>
-        <div id="about_me">
+        </section>
+        <section class="sobre-mi">
             <h3>Sobre mí</h3>
             <p>¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio,Japón. Me
                 encanta capturar la escencia de la vida urbana a través de mi lente, explorando el contraste entre la
                 arquitectura moderna y las tradiciones centenarias que conviven en esta metrópolis única. Desde
                 rascacielos deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro
                 inspiración en cada rincón de esta increible ciudad.</p>
-        </div>
+        </section>
     </main>
 
 </body>

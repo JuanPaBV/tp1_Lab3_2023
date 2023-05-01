@@ -1,6 +1,7 @@
 * {
     margin: 0%;
-    font-family: 'Ysabeau', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    /* font-size: 20px; */
 }
 
 .cabecera {
@@ -23,4 +24,85 @@
 
 img {
     width: 400px;
+}
+
+main {
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-template-rows: auto auto auto;
+    justify-content: center;
+    padding: 100px;
+}
+
+.perfil {
+    background-color: white;
+    border-radius: 25px;
+    grid-column: 1 / 3;
+    margin-bottom: 50px;
+    padding: 50px;
+}
+
+.perfil img {
+    width: 250px;
+    border-radius: 50%;
+    border: 5px solid #116df3;
+    float: left;
+}
+
+#perfil-informacion {
+    margin-left: 300px;
+}
+
+.perfil button {
+    background-color: #116df3;
+    color: white;
+    border-radius: 25px;
+    height: 50px;
+    width: 100px;
+    float: right;
+}
+
+.publicaciones {
+    background-color: white;
+    border-radius: 25px;
+    margin-right: 50px;
+    padding: 30px;
+}
+
+.publicaciones img {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.publicaciones p {
+    padding-bottom: 20px;
+    color: gray;
+}
+
+.publicaciones button {
+    color: #116df3;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border-style: none;
+    margin-bottom: 20px;
+}
+
+.publicaciones #likes {
+    color: gray;
+    float: right;
+}
+
+.sobre-mi {
+    max-height: 300px;
+    background-color: white;
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.sobre-mi h3 {
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 30px;
 }
