@@ -1,6 +1,26 @@
-header {
-    background-color: blue;
+* {
+    margin: 0%;
+    font-family: 'Ysabeau', sans-serif;
 }
+
+.cabecera {
+    display: flex;
+    height: 80px;
+    background-color: #116df3;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    padding-left: 80px;
+    width: 180px;
+}
+
+.ingreso-usuario {
+    float: right;
+    padding-right: 100px;
+}
+
 img {
     width: 400px;
 }
