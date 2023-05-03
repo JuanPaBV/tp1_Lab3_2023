@@ -40,16 +40,6 @@ function agregarComentario(evento) {
         alert('ERROR comentario no valido')
     }
     else {
-        // let etiqueta = document.createElement('span')
-        // let nombreUsuario = Document.createElement('p')
-        // let comentario = document.createTextNode(textoComentario)
-        // span.appendChild(comentario)
-        // let user = document.createTextNode(usuario + ' ')
-        // nombreUsuario.appendChild(user)
-
-        // let texto = 
-
-        // document.getElementById('lista-de-comentarios').appendChild(texto)
         let div=document.createElement('div')
         div.setAttribute('id', 'comentario_'+usuario)
 
@@ -75,10 +65,6 @@ function agregarComentario(evento) {
         
         let br = document.createElement('br')
 
-        // h4.appendChild(usuario)
-        // document.getElementById('lista-de-comentarios').appendChild(h4)
-        // document.getElementById('lista-de-comentarios').appendChild(span)
-        // document.getElementById('lista-de-comentarios').appendChild(btnEliminar)
         document.getElementById('lista-de-comentarios').appendChild(div)
         document.getElementById('lista-de-comentarios').appendChild(br)
     }
@@ -91,15 +77,6 @@ function eliminar() {
     let usuario = document.getElementById('usuario').value;
     let div = document.getElementById('comentario_'+usuario)
 
-    // let divUsuario = document.getElementById('comentario_'+usuario)
-
-    // if(usuario === divUsuario) {
-    //     document.getElementById('comentario_'+usuario).remove
-    // }
-    // else {
-    //     alert('ERROR')
-    // }
-    // alert('comentario_'+usuario)
     if (usuario.trim() === '') {
         alert ('Usuario incorrecto')
     }

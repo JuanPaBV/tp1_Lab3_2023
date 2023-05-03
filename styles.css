@@ -48,6 +48,7 @@ main {
     border-radius: 50%;
     border: 5px solid #116df3;
     float: left;
+    padding: 5px;
 }
 
 #perfil-informacion {
@@ -105,4 +106,12 @@ main {
     margin-bottom: 20px;
     color: gray;
     font-size: 30px;
+}
+
+#cajaComentarios {
+    width: 80%;
+    margin-right: 50px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: lightgray;
 }
