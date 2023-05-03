@@ -87,9 +87,6 @@ function agregarComentario(evento) {
     document.getElementById('usuario').value = '';
 }
 
-let btnEliminar = document.getElementById('btn_eliminar')
-btnEliminar.addEventListener('click', eliminar)
-
 function eliminar() {
     let usuario = document.getElementById('usuario').value;
     // let divUsuario = document.getElementById('comentario_'+usuario)
@@ -106,6 +103,6 @@ function eliminar() {
     }
     else {
         let borrar = document.getElementById('comentario_'+usuario)
-        borrar.innerHTML = "";
+        borrar.remove();
     }
 }
