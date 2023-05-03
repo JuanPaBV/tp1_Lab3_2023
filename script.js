@@ -89,6 +89,8 @@ function agregarComentario(evento) {
 
 function eliminar() {
     let usuario = document.getElementById('usuario').value;
+    let div = document.getElementById('comentario_'+usuario)
+
     // let divUsuario = document.getElementById('comentario_'+usuario)
 
     // if(usuario === divUsuario) {
@@ -102,7 +104,6 @@ function eliminar() {
         alert ('Usuario incorrecto')
     }
     else {
-        let borrar = document.getElementById('comentario_'+usuario)
-        borrar.remove();
+        div.remove();
     }
 }
