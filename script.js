@@ -34,12 +34,10 @@ function agregarComentario(evento) {
     let usuario = document.getElementById('usuario').value;
 
     if (usuario.trim() === '') {
-        // alert('ERROR usuario no valido')
         mostrarError('errorUsuario')
         document.getElementById('errorComentario').style.display = 'none';    
     }
     else if (textoComentario.trim() === '') {
-        // alert('ERROR comentario no valido')
         mostrarError('errorComentario')
         document.getElementById('errorUsuario').style.display = 'none';
     }
@@ -60,6 +58,7 @@ function agregarComentario(evento) {
         let textoEliminar = document.createTextNode('Eliminar')
         btnEliminar.appendChild(textoEliminar)
         btnEliminar.style.float = 'right'
+        btnEliminar.style.color = 'red'
         btnEliminar.setAttribute('id', 'btn_Eliminar')
         btnEliminar.setAttribute('onclick', 'eliminar()')
 
@@ -85,7 +84,6 @@ function eliminar() {
     let div = document.getElementById('comentario_' + usuario)
 
     if (usuario.trim() === '') {
-        // alert('Usuario incorrecto')
         mostrarError('errorUsuario')
     }
     else {

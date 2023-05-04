@@ -20,6 +20,13 @@
 .ingreso-usuario {
     float: right;
     padding-right: 100px;
+    border-radius: 10px;
+}
+
+#usuario {
+    height: 30px;
+    border-radius: 10px;
+    background-color: lightblue;
 }
 
 img {
@@ -87,7 +94,6 @@ main {
     width: 100px;
     border-radius: 10px;
     border-style: none;
-    /* margin-bottom: 20px; */
 }
 
 .publicaciones #likes {
