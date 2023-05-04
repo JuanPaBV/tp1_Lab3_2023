@@ -1,4 +1,4 @@
-let btnSeguir = document.getElementById('btn_seguir'); 
+let btnSeguir = document.getElementById('btn_seguir');
 btnSeguir.addEventListener('click', seguir);
 
 function seguir() {
@@ -34,14 +34,18 @@ function agregarComentario(evento) {
     let usuario = document.getElementById('usuario').value;
 
     if (usuario.trim() === '') {
-        alert('ERROR usuario no valido')
+        // alert('ERROR usuario no valido')
+        mostrarError('errorUsuario')
+        document.getElementById('errorComentario').style.display = 'none';    
     }
     else if (textoComentario.trim() === '') {
-        alert('ERROR comentario no valido')
+        // alert('ERROR comentario no valido')
+        mostrarError('errorComentario')
+        document.getElementById('errorUsuario').style.display = 'none';
     }
     else {
-        let div=document.createElement('div')
-        div.setAttribute('id', 'comentario_'+usuario)
+        let div = document.createElement('div')
+        div.setAttribute('id', 'comentario_' + usuario)
 
         let texto = document.createTextNode(' ' + textoComentario)
         let span = document.createElement('span')
@@ -50,37 +54,46 @@ function agregarComentario(evento) {
         let textoUsuario = document.createTextNode(usuario)
         let h4 = document.createElement('h4')
         h4.appendChild(textoUsuario)
-        h4.style.fontWeight='bold'
+        h4.style.fontWeight = 'bold'
 
         let btnEliminar = document.createElement('button')
         let textoEliminar = document.createTextNode('Eliminar')
         btnEliminar.appendChild(textoEliminar)
-        btnEliminar.style.float='right'
+        btnEliminar.style.float = 'right'
         btnEliminar.setAttribute('id', 'btn_Eliminar')
         btnEliminar.setAttribute('onclick', 'eliminar()')
 
         div.appendChild(h4)
         div.appendChild(span)
         div.appendChild(btnEliminar)
-        
+
         let br = document.createElement('br')
 
         document.getElementById('lista-de-comentarios').appendChild(div)
         document.getElementById('lista-de-comentarios').appendChild(br)
+        document.getElementById('errorUsuario').style.display = 'none';
+        document.getElementById('errorComentario').style.display = 'none';    
     }
 
     document.getElementById('cajaComentarios').value = '';
     document.getElementById('usuario').value = '';
+
 }
 
 function eliminar() {
     let usuario = document.getElementById('usuario').value;
-    let div = document.getElementById('comentario_'+usuario)
+    let div = document.getElementById('comentario_' + usuario)
 
     if (usuario.trim() === '') {
-        alert ('Usuario incorrecto')
+        // alert('Usuario incorrecto')
+        mostrarError('errorUsuario')
     }
     else {
         div.remove();
+        document.getElementById('errorUsuario').style.display = 'none';
     }
+}
+
+function mostrarError(id) {
+    document.getElementById(id).style.display = 'block';
 }

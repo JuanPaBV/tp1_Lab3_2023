@@ -115,3 +115,9 @@ main {
     border-radius: 10px;
     background-color: lightgray;
 }
+
+.error {
+    display: none;
+    color: red !important;
+    font-weight: bold;
+}
