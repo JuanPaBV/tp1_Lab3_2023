@@ -99,10 +99,14 @@
 const app = Vue.createApp({
     data() {
         return {
-            image: './imagenes/publicacion.jpg'
+            image: './imagenes/publicacion.jpg',
+            likes: 200,
         }
     },
     methods: {
-
+        meGusta() {
+            if (this.likes === 200) this.likes += 1;
+            else this.likes -= 1;
+        }
     }
 })
