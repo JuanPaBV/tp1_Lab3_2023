@@ -33,7 +33,7 @@ img {
     width: 400px;
 }
 
-main {
+.main {
     background-color: lightgray;
     display: grid;
     grid-template-columns: 70% auto;

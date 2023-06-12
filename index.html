@@ -2,82 +2,70 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Globo</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Globo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 </head>
 
 <body>
-    <header class="cabecera">
-        <img src="imagenes/globo.png" alt="Logo" id="logo">
-        <div class="ingreso-usuario">
-            <input id="usuario" type="text" placeholder="Ingresa tu usuario...">
-        </div>
-    </header>
-    <main>
-        <section class="perfil"">
-            <img src=" imagenes/fotoPerfil.jpg" alt="Foto de perfil">
-            <div id="perfil-informacion">
-                <h1>Jane Doe</h1>
-                <br>
-                <p><strong>Email:</strong>jane_doe@email.com</p>
-                <br>
-                <p><strong>Fecha de nacimiento:</strong>01/05/1996</p>
-                <br>
-                <p><strong>Telefono:</strong>918-936-9585</p>
-                <br>
-                <p><strong>Ciudad:</strong>Tokio,Japón</p>
-                <br>
-                <p>Trabajando en <strong>Lawn N</strong></p>
-            </div>
-            <button id="btn_seguir">Seguir</button>
-        </section>
-        <section class="publicaciones">
-            <p>Publicado hace 1 semana</p>
-            <img src="imagenes/publicacion.jpg" alt="callejones de tokio">
-            <button id="btn_meGusta">Me gusta</button>
-            <h4 id="likes"><span id="contador" style="color: black;"><strong>200</strong></span> Likes</h4>
-            <div id="comentarios">
-                <br>
-                <h4>Comentarios</h4>
-                <br>
-                <div id="lista-de-comentarios">
-                    <div>
-                        <h4>Juan Perez</h4>
-                        <span>¡Wow, esa foto de Tokio es impresionante!</span>
-                    </div>
-                    <br>
-                    <div>
-                        <h4>Kathleen J Rennie</h4>
-                        <span>¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</span>
-                    </div>
-                    <br>
-                </div>
-                <br>
-                <form action="Comentar">
-                    <input id="cajaComentarios" type="text" placeholder="Deja tu comentario..."></input>
-                    <button id="btnComentar" style="float: right;">Comentar</button>
-                </form>
-            </div>
-            <p id="errorUsuario" class="error">Error: El usuario ingresado no cumple con los requisitos</p>
-            <p id="errorComentario" class="error">Error: El comentario ingresado no cumple con los requisitos</p>
-        </section>
-        <section class="sobre-mi">
-            <h3>Sobre mí</h3>
-            <p>¡Hola a todos! Soy Jane, y actualmente vivo en la vibrante y emocionante ciudad de Tokio,Japón. Me
-                encanta capturar la escencia de la vida urbana a través de mi lente, explorando el contraste entre la
-                arquitectura moderna y las tradiciones centenarias que conviven en esta metrópolis única. Desde
-                rascacielos deslumbrantes y calles bulliciosas hasta templos serenos y jardines tranquilos, encuentro
-                inspiración en cada rincón de esta increible ciudad.</p>
-        </section>
-    </main>
+  <div id="app">
+    <div class="cabecera">
+      <img src="imagenes/globo.png" alt="Logo" id="logo">
+      <div class="ingreso-usuario">
+        <input id="usuario" type="text" placeholder="Ingresa tu usuario...">
+      </div>
+    </div>
+    <div class="main">
+      <perfil></perfil>
 
+      <div class="publicaciones">
+        <p>Publicado hace 1 semana</p>
+        <img v-bind:src="image" alt="callejones de tokio">
+        <button id="btn_meGusta">Me gusta</button>
+        <h4 id="likes"><span id="contador" style="color: black;"><strong>200</strong></span> Likes</h4>
+        <div id="comentarios">
+          <br>
+          <h4>Comentarios</h4>
+          <br>
+          <div id="lista-de-comentarios">
+            <div>
+              <h4>Juan Perez</h4>
+              <span>¡Wow, esa foto de Tokio es impresionante!</span>
+            </div>
+            <br>
+            <div>
+              <h4>Kathleen J Rennie</h4>
+              <span>¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</span>
+            </div>
+            <br>
+          </div>
+          <br>
+          <form action="Comentar">
+            <input id="cajaComentarios" type="text" placeholder="Deja tu comentario..."></input>
+            <button id="btnComentar" style="float: right;">Comentar</button>
+          </form>
+        </div>
+        <p id="errorUsuario" class="error">Error: El usuario ingresado no cumple con los requisitos</p>
+        <p id="errorComentario" class="error">Error: El comentario ingresado no cumple con los requisitos</p>
+      </div>
+
+      <sobre-mi></sobre-mi>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+  <script src="./components/Perfil.js"></script>
+  <script src="./components/SobreMi.js"></script>
+  
+  <script>
+    const mountedApp = app.mount('#app')
+  </script>
 </body>
 
 </html>
