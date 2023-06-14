@@ -18,7 +18,7 @@
     <div class="cabecera">
       <img src="imagenes/globo.png" alt="Logo" id="logo">
       <div class="ingreso-usuario">
-        <input id="usuario" type="text" placeholder="Ingresa tu usuario...">
+        <input id="usuario" v-model="usuario" type="text" placeholder="Ingresa tu usuario...">
       </div>
     </div>
     <div class="main">
@@ -37,22 +37,24 @@
             <div>
               <h4>Juan Perez</h4>
               <span>¡Wow, esa foto de Tokio es impresionante!</span>
+              <br>
             </div>
-            <br>
             <div>
               <h4>Kathleen J Rennie</h4>
               <span>¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</span>
+              <br>
             </div>
-            <br>
+            <lista-comentarios :comentarios="comentarios" :usuario="usuario"></lista-comentarios>
           </div>
           <br>
-          <form action="Comentar">
+          <!-- <form action="Comentar">
             <input id="cajaComentarios" type="text" placeholder="Deja tu comentario..."></input>
             <button id="btnComentar" style="float: right;">Comentar</button>
-          </form>
+          </form> -->
+          <seccion-comentarios :usuario="usuario" @comentario-enviado="agregarComentario" @error-usuario="userError"></seccion-comentarios>
         </div>
-        <p id="errorUsuario" class="error">Error: El usuario ingresado no cumple con los requisitos</p>
-        <p id="errorComentario" class="error">Error: El comentario ingresado no cumple con los requisitos</p>
+        <!-- <p id="errorUsuario" class="error" v-if="errorUsuario">Error: El usuario ingresado no cumple con los requisitos</p>
+        <p id="errorComentario" class="error" v-if="errorComentario">Error: El comentario ingresado no cumple con los requisitos</p> -->
       </div>
 
       <sobre-mi></sobre-mi>
@@ -62,7 +64,9 @@
   <script src="./script.js"></script>
   <script src="./components/Perfil.js"></script>
   <script src="./components/SobreMi.js"></script>
-  
+  <script src="./components/SeccionComentarios.js"></script>
+  <script src="./components/ListaComentarios.js"></script>
+
   <script>
     const mountedApp = app.mount('#app')
   </script>

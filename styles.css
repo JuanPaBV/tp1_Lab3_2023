@@ -123,7 +123,7 @@ img {
 }
 
 .error {
-    display: none;
+    /* display: none; */
     color: red !important;
     font-weight: bold;
 }
