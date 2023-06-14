@@ -28,7 +28,7 @@
         <p>Publicado hace 1 semana</p>
         <img :src="image" alt="callejones de tokio">
         <button id="btn_meGusta" @click="meGusta">Me gusta</button>
-        <h4 id="likes"><span id="contador" style="color: black;"><strong>{{ likes }}</strong></span> Likes</h4>
+        <h4 id="likes"><span id="contador"><strong>{{ likes }}</strong></span> Likes</h4>
         <div id="comentarios">
           <br>
           <h4>Comentarios</h4>
@@ -47,10 +47,6 @@
             <lista-comentarios :comentarios="comentarios" :usuario="usuario" @error-usuario="userError"></lista-comentarios>
           </div>
           <br>
-          <!-- <form action="Comentar">
-            <input id="cajaComentarios" type="text" placeholder="Deja tu comentario..."></input>
-            <button id="btnComentar" style="float: right;">Comentar</button>
-          </form> -->
           <seccion-comentarios :usuario="usuario" @comentario-enviado="agregarComentario"></seccion-comentarios>
         </div>
         <p v-show="errorUsuario">Error: el usuario ingresado no cuenta con permisos para borrar el comentario indicado</p>

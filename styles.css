@@ -1,7 +1,6 @@
 * {
     margin: 0%;
     font-family: 'Montserrat', sans-serif;
-    /* font-size: 20px; */
 }
 
 .cabecera {
@@ -123,7 +122,10 @@ img {
 }
 
 .error {
-    /* display: none; */
     color: red !important;
     font-weight: bold;
+}
+
+#contador {
+    color: black;
 }
