@@ -44,17 +44,16 @@
               <span>¡Esta foto de Tokio es simplemente espectacular! Me trae tantos recuerdos.</span>
               <br>
             </div>
-            <lista-comentarios :comentarios="comentarios" :usuario="usuario"></lista-comentarios>
+            <lista-comentarios :comentarios="comentarios" :usuario="usuario" @error-usuario="userError"></lista-comentarios>
           </div>
           <br>
           <!-- <form action="Comentar">
             <input id="cajaComentarios" type="text" placeholder="Deja tu comentario..."></input>
             <button id="btnComentar" style="float: right;">Comentar</button>
           </form> -->
-          <seccion-comentarios :usuario="usuario" @comentario-enviado="agregarComentario" @error-usuario="userError"></seccion-comentarios>
+          <seccion-comentarios :usuario="usuario" @comentario-enviado="agregarComentario"></seccion-comentarios>
         </div>
-        <!-- <p id="errorUsuario" class="error" v-if="errorUsuario">Error: El usuario ingresado no cumple con los requisitos</p>
-        <p id="errorComentario" class="error" v-if="errorComentario">Error: El comentario ingresado no cumple con los requisitos</p> -->
+        <p v-show="errorUsuario">Error: el usuario ingresado no cuenta con permisos para borrar el comentario indicado</p>
       </div>
 
       <sobre-mi></sobre-mi>

@@ -17,14 +17,20 @@ app.component('lista-comentarios', {
         <span>{{ comentario.comentario }}</span>
         <button id="btnEliminar" @click="eliminar(comentario, usuario)" style="float: right;">Eliminar</button>
         <br>
+        <p v-show="error">Error: el usuario ingresado no cuenta con permisos para borrar el comentario indicado</p>
     </div>
     `,
+    data() {
+        return {
+            error: false
+        }
+    },
     methods: {
         eliminar(comentario, usuario) {
             if(comentario.usuario === usuario) {
                 this.comentarios.splice(comentario, 1);
             }
-            else alert("burro")
+            else this.error = true
         }
     }
 })

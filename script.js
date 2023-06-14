@@ -104,7 +104,6 @@ const app = Vue.createApp({
             likes: 200,
             comentarios: [],
             errorUsuario: false,
-            errorComentario: false
         }
     },
     methods: {
